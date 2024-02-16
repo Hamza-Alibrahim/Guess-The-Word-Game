@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: arial, tahoma;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    border-radius: 6px;
+    background-color: #eee;
+    user-select: none;
+}
+
+h1 {
+    background-color: white;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.guess-game {
+    padding: 20px;
+    border-radius: 6px;
+    width: 1000px;
+    display: flex;
+
+    .game-area {
+        flex: 1;
+
+        .inputs div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            pointer-events: all;
+            opacity: 1;
+
+            &.disabled {
+                opacity: .5;
+                pointer-events: none;
+            }
+
+            span {
+                font-weight: bold;
+            }
+
+            input {
+                width: 50px;
+                height: 50px;
+                border-radius: 6px 6px 0 0;
+                border: none;
+                outline: none;
+                border-bottom: 3px solid black;
+                margin-left: 30px;
+                text-align: center;
+                font-size: 35px;
+                text-transform: uppercase;
+                transition: .5s;
+                background-color: white !important;
+
+                &.in {
+                    background-color: #f89e13 !important;
+                    border: 3px solid #f89e13;
+                    color: white;
+                    border-radius: 6px;
+                }
+
+                &.n-in {
+                    background-color: #18ba89 !important;
+                    border: 3px solid #18ba89;
+                    color: white;
+                    border-radius: 6px;
+                }
+
+                &.wr {
+                    background-color: #27303f !important;
+                    border: 3px solid #27303f;
+                    color: white;
+                    border-radius: 6px;
+                }
+            }
+        }
+
+        .cotrol {
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+
+            button {
+                padding: 15px 25px;
+                border-radius: 6px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+
+                &.check {
+                    background-color: #fb2a1b;
+                    width: 300px;
+                    margin-right: 5px;
+                }
+
+                &.hint {
+                    background-color: #009688;
+                }
+
+                &:disabled {
+                    cursor: no-drop;
+                    background-color: rgb(0 0 0 / 50%);
+                }
+            }
+        }
+
+        .message {
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+
+            span {
+                font-weight: bold;
+                display: block;
+                font-size: 50px;
+                margin-top: 10px;
+                color: #673AB7;
+            }
+
+            p {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .key-colors {
+        padding: 20px;
+
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .key-color {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+
+            .key {
+                width: 30px;
+                height: 30px;
+                border-radius: 4px;
+                margin-right: 10px;
+
+                &.in {
+                    background-color: #f89e13;
+                }
+
+                &.n-in {
+                    background-color: #18ba89;
+                }
+
+                &.wr {
+                    background-color: #27303f;
+                }
+
+                .key-text {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
